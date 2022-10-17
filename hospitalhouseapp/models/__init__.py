@@ -1,4 +1,4 @@
-from .user import User
+from .usuario import Usuario
 from .enfermero import Enfermero
 from .historia import Historiaclinica
 from .medico import Medico

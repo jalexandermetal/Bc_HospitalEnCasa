@@ -43,14 +43,14 @@ INSTALLED_APPS = [
 ]
 
 SIMPLE_JWT = {
-'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),
-'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
-'ROTATE_REFRESH_TOKENS': False,
-'BLACKLIST_AFTER_ROTATION': True,
-'UPDATE_LAST_LOGIN': False,
-'ALGORITHM': 'HS256',
-'USER_ID_FIELD': 'id',
-'USER_ID_CLAIM': 'user_id',
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
+    'ROTATE_REFRESH_TOKENS': False,
+    'BLACKLIST_AFTER_ROTATION': True,
+    'UPDATE_LAST_LOGIN': False,
+    'ALGORITHM': 'HS256',
+    'USER_ID_FIELD': 'id',
+    'USER_ID_CLAIM': 'user_id',
 }
 
 MIDDLEWARE = [
@@ -64,16 +64,15 @@ MIDDLEWARE = [
 ]
 
 REST_FRAMEWORK = {
-'DEFAULT_PERMISSION_CLASSES': (
-'rest_framework.permissions.AllowAny',
-),
-'DEFAULT_AUTHENTICATION_CLASSES': (
-'rest_framework_simplejwt.authentication.JWTAuthentication',
-)
+    'DEFAULT_PERMISSION_CLASSES': (
+    'rest_framework.permissions.AllowAny',
+    ),
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+    'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
 }
 
-AUTH_USER_MODEL = 'hospitalhouseapp.User'
-
+AUTH_USER_MODEL = 'hospitalhouseapp.Usuario'
 ROOT_URLCONF = 'hospitalhouse.urls'
 
 TEMPLATES = [
@@ -99,14 +98,14 @@ WSGI_APPLICATION = 'hospitalhouse.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-'default': {
-'ENGINE': 'django.db.backends.postgresql_psycopg2',
-'NAME': 'postgres',
-'USER': 'postgres',
-'PASSWORD': '',
-'HOST': 'localhost',
-'PORT': '5432',
-}
+    'default': {
+    'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    'NAME': 'd323c2urqaofjo',
+    'USER': 'fcphoxdlsmojex',
+    'PASSWORD': '1b704494fb620a706c63ab3031fc227a2c44f3294bbdebc1e656ceaec16afdeb',
+    'HOST': 'ec2-34-200-205-45.compute-1.amazonaws.com',
+    'PORT': '5432',
+    }
 }
 
 

@@ -4,7 +4,7 @@ from urllib import response
 from rest_framework import status, views
 from rest_framework.response import Response
 from rest_framework import generics
-from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
+#from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from hospitalhouseapp import serializers
 from hospitalhouseapp.models import usuario
 from hospitalhouseapp.models.usuario import Usuario
@@ -32,6 +32,13 @@ class UsuarioRetrieveUpdateDeleteView(generics.RetrieveUpdateDestroyAPIView):
 
     def get(self, request, *args, **kwargs):
         print("get a usuario")
+        """token = request.META.get('HTTP_AUTHORIZATION')[7:]
+        tokenBackend = TokenBackend(algorithm=settings.SIMPLE_JWT['ALGORITHM'])
+        valid_data = tokenBackend.decode(token,verify=False)
+
+        if valid_data['user_id'] != kwargs['pk']:
+            stringResponse = {'detail':'Unauthorized Request'}
+            return Response(stringResponse, status=status.HTTP_401_UNAUTHORIZED)"""
         return super().get(request, *args, **kwargs)
     
     def put(self, request, *args, **kwargs):
@@ -40,4 +47,4 @@ class UsuarioRetrieveUpdateDeleteView(generics.RetrieveUpdateDestroyAPIView):
 
     def delete(self, request, *args, **kwargs):
         print("delete de usuario")
-
+        return super().delete(request, *args, **kwargs)

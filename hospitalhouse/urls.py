@@ -17,11 +17,17 @@ from django.contrib import admin
 from django.urls import include, path
 
 from hospitalhouseapp import views
-from hospitalhouseapp.views.usuarioviews import usuarioListView
+from hospitalhouseapp.views import pacienteview, usuarioview
+from hospitalhouseapp.views.medicoview import MedicoListCreateView, MedicoRetrieveUpdateDeleteView
+from hospitalhouseapp.views.pacienteview import PacienteListCreateView, PacienteRetrieveUpdateDeleteView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api-auth/', include('rest_framework.urls'))
-    path('user',views.usuarioListView.as_view())
-    
+    path('api-auth/', include('rest_framework.urls')),
+    path('usuario/', views.usuarioview.usuarioListView.as_view()),
+    path('usuario/<int:pk>/', views.usuarioview.UsuarioRetrieveUpdateDeleteView.as_view()),
+    path('medico', views.medicoview.MedicoListCreateView.as_view()),
+    path('medico/<int:pk>/', views.medicoview.MedicoRetrieveUpdateDeleteView.as_view()),
+    path('paciente/', views.pacienteview.PacienteListCreateView.as_view()),
+    path('paciente/<int:pk>/',views.pacienteview.PacienteRetrieveUpdateDeleteView.as_view())
 ]
